@@ -1,0 +1,21 @@
+{
+  "user_id": "u_001",
+  "average_stake": 18.75,
+  "stake_escalation_ratio_after_losses": 2.0,
+  "trades_per_minute": 2.0338983050847457,
+  "news_trade_percentage": 0.0,
+  "win_rate": 0.25,
+  "revenge_interval_seconds": 39.333333333333336,
+  "longest_losing_streak": 3,
+  "total_trades": 4,
+  "net_profit_loss": 1.0,
+  "avg_session_duration_seconds": 151.0,
+  "supporting_stats": {
+    "trade_count": 4,
+    "session_count": 1,
+    "win_count": 1,
+    "loss_count": 3,
+    "escalation_samples": 3,
+    "revenge_samples": 3
+  }
+}

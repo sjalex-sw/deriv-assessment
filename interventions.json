@@ -1,0 +1,18 @@
+{
+  "criteria": [
+    {
+      "risk_tier": "high",
+      "intervention_type": "cooling_off_period",
+      "triggering_patterns": ["martingale", "revenge_trading"],
+      "evidence_summary": "Repeated stake escalation after losses and short revenge intervals with a longest losing streak of 3",
+      "recommended_action": "Suggest 24h cooling off period"
+    },
+    {
+      "risk_tier": "medium",
+      "intervention_type": "soft_nudge",
+      "triggering_patterns": ["news_chasing"],
+      "evidence_summary": "Single trade with 100% news trade percentage and net loss",
+      "recommended_action": "Provide educational content on risks of news chasing"
+    }
+  ]
+}

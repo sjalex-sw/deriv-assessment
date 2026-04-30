@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": "u_001",
+    "risk_score": 65.64,
+    "risk_tier": "high",
+    "contributing_factors": {
+      "pattern_score": 45,
+      "feature_score": 20.640847457627117
+    },
+    "formula_version": "risk_model_v1"
+  },
+  {
+    "user_id": "u_002",
+    "risk_score": 32.75,
+    "risk_tier": "medium",
+    "contributing_factors": {
+      "pattern_score": 15,
+      "feature_score": 17.75
+    },
+    "formula_version": "risk_model_v1"
+  }
+]

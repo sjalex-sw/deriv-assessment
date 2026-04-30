@@ -1,0 +1,75 @@
+[
+  {
+    "user_id": "u_001",
+    "patterns": [
+      "martingale",
+      "revenge_trading"
+    ],
+    "evidence": [
+      {
+        "pattern": "martingale",
+        "triggering_features": [
+          "stake_escalation_ratio_after_losses",
+          "longest_losing_streak",
+          "last 4 trades stakes"
+        ],
+        "trade_ids": [
+          "t_00001",
+          "t_00002",
+          "t_00003",
+          "t_00004"
+        ],
+        "explanation": "The stakes double after each loss (5.0, 10.0, 20.0, 40.0), consistent with martingale strategy where the trader increases stake after losses to recover losses with a single win."
+      },
+      {
+        "pattern": "revenge_trading",
+        "triggering_features": [
+          "revenge_interval_seconds",
+          "loss_count",
+          "stake_escalation_ratio_after_losses"
+        ],
+        "trade_ids": [
+          "t_00001",
+          "t_00002",
+          "t_00003"
+        ],
+        "explanation": "The trader places trades quickly after losses (average revenge interval ~39 seconds) and escalates stakes after losses, indicating attempts to quickly recover losses, a hallmark of revenge trading."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "user_id": "u_002",
+    "patterns": [
+      "news_chasing",
+      "normal"
+    ],
+    "evidence": [
+      {
+        "pattern": "news_chasing",
+        "triggering_features": [
+          "news_trade_percentage: 100.0",
+          "single trade executed",
+          "trade resulted in loss"
+        ],
+        "trade_ids": [
+          "t_00005"
+        ],
+        "explanation": "The user executed a single trade that was 100% news-based and resulted in a loss, indicating a tendency to chase news events."
+      },
+      {
+        "pattern": "normal",
+        "triggering_features": [
+          "stake_escalation_ratio_after_losses: 0",
+          "revenge_interval_seconds: 0",
+          "longest_losing_streak: 1"
+        ],
+        "trade_ids": [
+          "t_00005"
+        ],
+        "explanation": "No evidence of stake escalation or revenge trading was found, and the losing streak is minimal, suggesting normal trading behavior."
+      }
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "user_id": "u_002",
+  "patterns": [
+    "news_chasing",
+    "normal"
+  ],
+  "evidence": [
+    {
+      "pattern": "news_chasing",
+      "triggering_features": [
+        "news_trade_percentage: 100.0",
+        "single trade executed",
+        "trade resulted in loss"
+      ],
+      "trade_ids": [
+        "t_00005"
+      ],
+      "explanation": "The user executed a single trade that was 100% news-based and resulted in a loss, indicating a tendency to chase news events."
+    },
+    {
+      "pattern": "normal",
+      "triggering_features": [
+        "stake_escalation_ratio_after_losses: 0",
+        "revenge_interval_seconds: 0",
+        "longest_losing_streak: 1"
+      ],
+      "trade_ids": [
+        "t_00005"
+      ],
+      "explanation": "No evidence of stake escalation or revenge trading was found, and the losing streak is minimal, suggesting normal trading behavior."
+    }
+  ],
+  "confidence": "medium"
+}
