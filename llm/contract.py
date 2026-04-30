@@ -79,14 +79,28 @@ class ContractRunner:
             raise ValueError(f"Could not parse JSON. Raw output:\n{text}")
 
 
+        def extract_array_output(parsed):
+            if isinstance(parsed, list):
+                return parsed
+
+            if isinstance(parsed, dict):
+                # common wrappers
+                for key in ["criteria", "interventions", "results", "data"]:
+                    if key in parsed and isinstance(parsed[key], list):
+                        return parsed[key]
+
+            raise ValueError("Output is not a valid array format")
+
+
         try:
             raw_output = raw_output.strip()
             if raw_output.startswith("```"):
                 raw_output = raw_output.strip("`")
                 raw_output = raw_output.replace("json", "", 1).strip()
-            parsed = safe_json_parse(raw_output)
+            parsed = extract_array_output(safe_json_parse(raw_output))
         except Exception as e:
             raise ValueError(f"[{contract.stage}] Invalid JSON output: {e}")
+
 
         def normalize_confidence(parsed: dict):
             c = parsed.get("confidence")
